@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profiles</title>
+        <link rel="icon" href="tinder.ico">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       
+    </head>
+    <body id="swipe-body">
+       
+        <script>
+            // This code snippet is used to show the preloader while the site is loading
+            window.onload=function(){
+                document.getElementById('student_profiles').style.display='block';
+                document.getElementById('preloader1').style.display='none';
+            }
+        </script>
+        <audio src="swipe.mp3" autoplay controls style="display: none;"></audio>
+        <div id="preloader1" displ></div>
+        
+        <div class="heading">
+            <a href="dating.html"><button id="back_swipe" type="button">Back</button></a>
+            <h1 style="text-align: center;color: white;">View different Profiles</h1></div>
+        <section>
+            <div id="student_profiles" style="color: black ;"></div>
+        </section>
+        <script>
+        // This two functions are used to increment and decrement the likes 
+        function increment(n){
+            document.getElementById(`like${n}`).innerHTML=`<i class="fa-regular fa-heart"></i>${n+1}`
+        }
+        function decrement(n){
+            document.getElementById(`like${n}`).innerHTML=`<i class="fa-regular fa-heart"></i>${n}`
+        }
+
+
+
+    let http= new XMLHttpRequest(); // This line creates a new instance of the XMLHttpRequest object, which is used to interact with servers. It's commonly used for making HTTP requests to fetch data from a server without having to reload the page.
+    http.open('get','students.json',true); //
+    http.send();
+    http.onload=function(){
+        var students=JSON.parse(this.responseText);//This line parses the response from the server, which is expected to be a JSON-formatted string. this.responseText contains the response data from the server. JSON.parse() is used to convert this JSON string into a JavaScript object.
+        students_out=students
+        if(this.readyState==4 &&this.status==200){// This condition checks if the request is complete (readyState 4) and if the response status is 200 (which means "OK"). 
+          
+            var output='';
+            
+            for(let i=0;i<students.length;i+=2){
+                Value1=Math.floor(Math.random() * 1000) + 1;
+                Value2=Math.floor(Math.random() * 1000) + 1;
+                output+=`
+                <div class="mywish">
+                    <div class="content">
+                    <div class="card">
+                    <div class="card-content">
+                    <div class="image">
+                    <img src=${students[i].Photo} alt="student">
+                    </div><br>
+                    <div class="bio-data">
+                    <p class="Name">Name: ${students[i].Name}</p>
+                    
+                    <p class="IITB_Roll_Number">IITB Roll Number: ${students[i]["IITB Roll Number"]}</p>
+                    <p class="Age">Age: ${students[i].Age}</p>
+                    <p class="Gender">Gender: ${students[i].Gender}</p>
+                    <p class="Interests">Interests: ${students[i].Interests}</p>
+                    <p class="Hobbies">Hobbies: ${students[i].Hobbies}</p>
+                    <p class="Email">Email: ${students[i].Email}</p>
+                    </div>
+                    <div class="date-me">
+                    <button type="button" class="like" id="like${Value1}"  onclick="increment(${Value1})" ondblclick="decrement(${Value1})"><i class="fa-regular fa-heart"></i>${Value1}</button>
+                    
+                    </div>
+                   </div>
+                   </div>
+                   </div>
+                
+                   <div class="content">
+                    <div class="card">
+                    <div class="card-content">
+                    <div class="image">
+                    <img src=${students[i+1].Photo} alt="student">
+                    </div><br>
+                    <div class="bio-data">
+                    <p class="Name">Name: ${students[i+1].Name}</p>
+                    
+                    <p class="IITB_Roll_Number">IITB Roll Number: ${students[i+1]["IITB Roll Number"]}</p>
+                    <p class="Age">Age: ${students[i+1].Age}</p>
+                    <p class="Gender">Gender: ${students[i+1].Gender}</p>
+                    <p class="Interests">Interests: ${students[i+1].Interests}</p>
+                    <p class="Hobbies">Hobbies: ${students[i+1].Hobbies}</p>
+                    <p class="Email">Email: ${students[i+1].Email}</p></div>
+                    <div class="date-me">
+                    <button type="button" class="like" id="like${Value2}" onclick="increment(${Value2})" ondblclick="decrement(${Value2})" ><i class="fa-regular fa-heart"></i>${Value2}</button>
+
+                    </div>
+                   </div>
+                   </div>
+                   </div>
+                   </div>
+                    `;
+                    
+                  
+                    document.getElementById("student_profiles").innerHTML=output;
+                    if(students.length%2==1 && i==students.length-3){
+                        Value3=Math.floor(Math.random() * 1000) + 1;
+                       
+                        out1=`
+                        <div class="mywish_odd" > 
+                        <div class="content">
+                        <div class="card">
+                        <div class="card-content">
+                        <div class="image">
+                        <img src=${students[i+2].Photo} alt="student">
+                        </div><br>
+                        <div class="bio-data">
+                        <p class="Name">Name: ${students[i+2].Name}</p>
+                        
+                        <p class="IITB_Roll_Number">IITB Roll Number: ${students[i+2]["IITB Roll Number"]}</p>
+                        <p class="Age">Age: ${students[i+2].Age}</p>
+                        <p class="Gender">Gender: ${students[i+2].Gender}</p>
+                        <p class="Interests">Interests: ${students[i+2].Interests}</p>
+                        <p class="Hobbies">Hobbies: ${students[i+2].Hobbies}</p>
+                        <p class="Email">Email: ${students[i+2].Email}</p></div>
+                        <div class="date-me">
+                        <button type="button" class="like" id="like${Value3}" onclick="increment(${Value3})" ondblclick="decrement(${Value3})" ><i class="fa-regular fa-heart"></i>${Value3}</button>
+                    
+                        </div>
+                       </div>
+                       </div>
+                       </div>
+                       </div>
+                       `
+                       document.getElementById("student_profiles").innerHTML+=out1;
+                    }
+            }
+            
+                
+                }
+                
+    }
+        </script>
+        <!-- This code snippet is used for loading the website -->
+         <div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="style.css">
+            <link rel="icon" href="tinder.ico">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <link rel="import" href="match.html">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+        <title>Find a Match!</title>
+    </head>
+    <body class="dating3">
+        <script>
+            window.onload=function(){
+                document.getElementById('container3').style.display='block';
+                document.getElementById('preloader').style.display='none';
+                document.getElementById('audio').innerHTML=`<audio src="dating3_thousands.mp3" autoplay ></audio>`
+            }
+        </script>
+       
+        <div id="audio" style="display: none;"></div>
+        <div id="preloader"></div>
+        <a href="login.html"> <button type="button" id="Logout">Logout</button></a>
+        <a href="swipe.html"><button type="button" id="swipe" onclick="profiles()" >Other Profiles</button></a>
+        <div class="container3" id="container3">
+            <div class="matched" id="matched"></div>
+            <form id="form1">
+                <p>FIND A MATCH</p>
+                <input type="text" placeholder="RollNumber" id="roll_number">
+                <input type="text" placeholder="Name" id="name">
+                <input type="number" placeholder="Year of Study" id="year">
+                <input type="number" placeholder="How old are you?" id="age">
+                <input type="text" placeholder="Email" id="email">
+                <input type="text" placeholder="URL to image" id="photo">
+                <div class="btn-box">
+                    <button type="button" id="next1">Next
+                    </button>
+                </div>
+            </form>
+            <form id="form2">
+                    <p>Let us Know More About you!!</p>
+                    <div class="gender">
+                    <h3><label for="gender">Gender:</label></h3>
+                    <input type="radio" name="gender1" id="male" value="male"><span id="male">Male</span>
+                    &nbsp;
+                    <input type="radio" name="gender1" id="female" value="female"><span id="female" >Female</span>
+                    &nbsp;
+                    <input type="radio" name="gender1" id="others" value="others"><span id="others" >Others</span>
+                    </div>
+                    <h3 style="position: absolute;margin-top: 10px;color: white;margin-left: -21px;">Interests: </h3><br>
+                    <div class="interest" >
+                        
+                        <ul>
+                        <li>Travelling:&nbsp;<input type="checkbox" name="interest" id="Travelling" value="Travelling"></li>
+                        <li>Sports:&nbsp;<input type="checkbox" name="interest" id="Sports" value="Sports"> </li>
+                       <li> Movies:&nbsp;<input type="checkbox" name="interest" id="Movies"value="Movies"></li>
+                        <li>Music:&nbsp;<input type="checkbox" name="interest" id="Music" value="Music"></li>
+                       <li> Literature:&nbsp;<input type="checkbox" name="interest" id="Literature" value="Literature"></li>
+                        <li>Technology:&nbsp;<input type="checkbox" name="interest" id="Technology" value="Technology"></li>
+                       <li> Fashion:&nbsp;<input type="checkbox" name="interest" id="Fashion" value="Fashion"></li>
+                       <li> Art:&nbsp;<input type="checkbox" name="interest" id="Art" value="Art"></li>
+                        </ul>
+                    </div><br>
+    
+                    <div class="btn-box" style="margin-top: -5px;">
+                        <button type="button" id="back1">Back
+                        </button>&nbsp;&nbsp;&nbsp;
+                        <button type="button" id="next2">Next
+                        </button>
+                    </div>
+
+            </form>
+            <form id="form3">
+                <p>One Last Thing!!</p>
+                <h3 style="position: absolute;margin-top: 10px;color: white;margin-left: -21px;">Hobbies:</h3> <br>
+                <div class="hobbies">
+                    <ul>
+                    <li>Reading:&nbsp;<input type="checkbox" name="hobbies" id="Reading" value="Reading"></li>
+                    <li>Cooking:&nbsp;<input type="checkbox" name="hobbies" id="Cooking" value="Cooking"> </li>
+                    <li>Coding:&nbsp;<input type="checkbox" name="hobbies" id="Coding" value="Coding"></li>
+                    <li>Gardening:&nbsp;<input type="checkbox" name="hobbies" id="Gardening" value="Gardening"></li>
+                    <li>Painting:&nbsp;<input type="checkbox" name="hobbies" id="Painting" value="Painting"></li>
+                    <li>Watching Youtube/Instagram:&nbsp;<input type="checkbox" name="hobbies" id="Instagram" value="Watching Youtube/Instagram"></li>
+                    <li>Playing Musical Instruments:&nbsp;<input type="checkbox" name="hobbies" id="Playing" value="Playing Musical Instruments"></li>
+                    <li>Photography:&nbsp;<input type="checkbox" name="hobbies" id="Photography" value="Photography"></li>
+                    </ul>
+                </div>
+                <div class="btn-box">
+                 <a href="match.html"><button type="button" id="seek_your_partner" style="width: 80%;">Seek your Partner
+                    </button></a>
+                <br><br>
+                    <button type="button" id="back2">Back
+                    </button>
+                </div>
+
+        </form>
+
+            <div class="step-row">
+                <div id="progress"></div>
+                <div class="step-col"><small>Step1</small></div>
+                <div class="step-col"><small>Step2</small></div>
+                <div class="step-col"><small>Step3</small></div>
+            </div>
+        </div>
+        <script>
+var students_out
+let http= new XMLHttpRequest();/// This line creates a new instance of the XMLHttpRequest object, which is used to interact with servers. It's commonly used for making HTTP requests to fetch data from a server without having to reload the page
+http.open('get','students.json',true);
+http.send();
+http.onload=function(){
+var students=JSON.parse(this.responseText);////This line parses the response from the server, which is expected to be a JSON-formatted string. this.responseText contains the response data from the server. JSON.parse() is used to convert this JSON string into a JavaScript object.
+        students_out=students}
+var lucky_ones
+var new_gender1
+var form1=document.getElementById("form1");
+var form2=document.getElementById("form2");
+var form3=document.getElementById("form3");
+
+var next1=document.getElementById("next1")
+var next2=document.getElementById("next2");
+var seek=document.getElementById("seek_your_partner")
+var back1=document.getElementById("back1");
+var progress=document.getElementById("progress");
+var new_container=document.getElementById("container3")
+var matched=document.getElementById("matched")
+var new_photo
+var new_name
+var new_rollno
+//below defines all the functions that needs to be executed on clicking the buttons
+next1.onclick=function(){
+    form1.style.left="-450px" /*shift the form by left*/
+    form2.style.left="80px"
+    progress.style.left="150px"
+    
+    new_rollno=document.getElementById("roll_number").value
+    new_name=document.getElementById("name").value 
+    console.log(new_name)
+    var new_year=document.getElementById("year").value
+    var new_age=document.getElementById("age").value
+    var new_email=document.getElementById("email").value
+    new_photo=document.getElementById("photo").value
+}
+back1.onclick=function(){
+    form1.style.left="80px" /*shift the form by left*/
+    form2.style.left="550px"
+    progress.style.left="0px"
+
+}
+next2.onclick=function(){
+    form2.style.left="-450px" /*shift the form by left*/
+    form3.style.left="80px"
+    progress.style.left="300px"
+    var new_gender=checked_values('gender1')
+    new_interest=checked_boxes("interest")
+    new_gender1=new_gender
+}
+back2.onclick=function(){
+    form2.style.left="80px" /*shift the form by left*/
+    form3.style.left="550px"
+    progress.style.left="150px"
+}
+
+seek.onclick=function(){
+    //Here I provide the matching algorithm
+    var match_student=[];
+    
+for(let i=0;i<students_out.length;i++)
+{
+    match_student[i]=0 //generating a zero array of length= no of students
+}   
+    console.log(new_gender1)
+    var new_hobbies=checked_boxes('hobbies') //get the hobbies selected by the user
+    
+
+
+//FOR MALE
+
+    if(new_gender1=="male"){
+       
+    for (interest of new_interest){
+        for(let i=0;i<students_out.length;i++){
+           for(interest1 of students_out[i].Interests){
+            if(interest==interest1 && students_out[i].Gender=="Female"){
+               match_student[i]+=1 //increases the value at index i if the interest of both the person matches
+               console.log(students_out[i].Gender)
+               
+            }
+           }
+        }
+    }
+    for (hobbie of new_hobbies){
+        for(let i=0;i<students_out.length;i++){
+           for(hobbie1 of students_out[i].Hobbies){
+            if(hobbie==hobbie1 && students_out[i].Gender=="Female"){
+               match_student[i]+=1//increases the value at index i if the hobbies of both the person matches
+               console.log(students_out[i].Gender)
+               
+            }
+           }
+        }
+    }
+    var maxIndex=null
+    var maxElement = Math.max.apply(null, match_student); // Get the maximum element in the array
+    maxIndex = match_student.indexOf(maxElement); // Get the index of the maximum element
+    if(maxElement===0){
+        console.log("hi")
+       localStorage.setItem('sorry','sorry')
+    }
+    else{
+        console.log("arrm")
+        lucky_ones=students_out[maxIndex] //get all the information of the right match in one variable lucky_ones
+        console.log(lucky_ones.Name)
+        console.log(lucky_ones.Email)
+        console.log(match_student)
+        console.log(new_photo)
+        console.log(new_name)
+        localStorage.setItem('sorry','nosorry')
+        localStorage.setItem('ling','Male')
+        localStorage.setItem('name',lucky_ones.Name)
+        localStorage.setItem('roll_no',lucky_ones["IITB Roll Number"])
+        localStorage.setItem('image',lucky_ones.Photo)
+        localStorage.setItem('year_study',lucky_ones["Year of Study"])
+        localStorage.setItem('age',lucky_ones.Age)
+        localStorage.setItem('Gender',lucky_ones.Gender)
+        localStorage.setItem('Interest',lucky_ones.Interests)
+        localStorage.setItem('Hobbies',lucky_ones.Hobbies)
+        localStorage.setItem('Email',lucky_ones.Email)
+        localStorage.setItem('og_photo',new_photo)
+        localStorage.setItem('new_name',new_name)
+
+        
+    }
+    
+    
+}
+
+
+
+//FOR FEMALE
+    else if(new_gender1=='female'){
+        for (interest of new_interest){
+            for(let i=0;i<students_out.length;i++){
+               for(interest1 of students_out[i].Interests){
+                if(interest==interest1 && students_out[i].Gender=="Male"){
+                   match_student[i]+=1
+                   console.log(students_out[i].Gender)
+                }
+               }
+            }
+        }
+        for (hobbie of new_hobbies){
+            for(let i=0;i<students_out.length;i++){
+               for(hobbie1 of students_out[i].Hobbies){
+                if(hobbie==hobbie1  && students_out[i].Gender=="Male"){
+                   match_student[i]+=1
+                   console.log(students_out[i].Gender)
+                }
+               }
+            }
+        }
+        var maxIndex=null
+        var maxElement = Math.max.apply(null, match_student); // Get the maximum element in the array
+        maxIndex = match_student.indexOf(maxElement); // Get the index of the maximum element
+        if(maxElement===0){
+            localStorage.setItem('sorry','sorry')
+        }
+        else{
+            console.log("arrf")
+            lucky_ones=students_out[maxIndex]
+            console.log(lucky_ones.Name)
+            console.log(match_student)
+        localStorage.setItem('sorry','nosorry')
+        localStorage.setItem('ling','Female')
+        localStorage.setItem('name',lucky_ones.Name)
+        localStorage.setItem('roll_no',lucky_ones["IITB Roll Number"])
+        localStorage.setItem('image',lucky_ones.Photo)
+        localStorage.setItem('year_study',lucky_ones["Year of Study"])
+        localStorage.setItem('age',lucky_ones.Age)
+        localStorage.setItem('Gender',lucky_ones.Gender)
+        localStorage.setItem('Interest',lucky_ones.Interests)
+        localStorage.setItem('Hobbies',lucky_ones.Hobbies)
+        localStorage.setItem('Email',lucky_ones.Email)
+        localStorage.setItem('og_photo',new_photo)
+        localStorage.setItem('new_name',new_name)
+        console.log('female')
+        console.log(new_photo)
+        }
+    }
+
+
+//FOR OTHERS
+
+    else if(new_gender1=='others'){
+        for (interest of new_interest){
+            for(let i=0;i<students_out.length;i++){
+               for(interest1 of students_out[i].Interests){
+                if(interest==interest1 && students_out[i].Gender=="Others"){
+                   match_student[i]+=1
+                   console.log(students_out[i].Gender)
+                }
+               }
+            }
+        }
+        for (hobbie of new_hobbies){
+            for(let i=0;i<students_out.length;i++){
+               for(hobbie1 of students_out[i].Hobbies){
+                if(hobbie==hobbie1 && students_out[i].Gender=="Others"){
+                   match_student[i]+=1
+                   console.log(students_out[i].Gender)
+                }
+               }
+            }
+        }
+        var maxIndex=null
+        var maxElement = Math.max.apply(null, match_student); // Get the maximum element in the array
+        maxIndex = match_student.indexOf(maxElement); // Get the index of the maximum element
+        lucky_ones=students_out[maxIndex]
+        if(maxElement===0){
+            localStorage.setItem('sorry','sorry')
+        }
+        else if(lucky_ones["IITB Roll Number"]==new_rollno){ //In case of others i had matched others with others so in this case the person will be matched to himself so to remove this conflict i had also applied rollno criteria as the rollno of the two matched person should be unique.
+            localStorage.setItem('sorry','sorry')
+        }
+        else{
+            console.log("arro")
+        
+        console.log(match_student)
+        console.log(lucky_ones.Name)
+        localStorage.setItem('sorry','nosorry')    
+        localStorage.setItem('ling','Others')
+        localStorage.setItem('name',lucky_ones.Name)
+        localStorage.setItem('roll_no',lucky_ones["IITB Roll Number"])
+        localStorage.setItem('image',lucky_ones.Photo)
+        localStorage.setItem('year_study',lucky_ones["Year of Study"])
+        localStorage.setItem('age',lucky_ones.Age)
+        localStorage.setItem('Gender',lucky_ones.Gender)
+        localStorage.setItem('Interest',lucky_ones.Interests)
+        localStorage.setItem('Hobbies',lucky_ones.Hobbies)
+        localStorage.setItem('Email',lucky_ones.Email)
+        localStorage.setItem('og_photo',new_photo)
+        localStorage.setItem('new_name',new_name)
+        
+    }
+        
+
+        
+    }
+
+        
+}
+//fxn for getting gender!!
+function checked_values(y) {
+    var radios = document.getElementsByName(y);
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            return radios[i].value;
+        }
+    }
+    return null;
+}
+//fxn for getting all the checked "checked boxes"
+function checked_boxes(y) {
+    var checkboxes = document.getElementsByName(y); // Select all checkboxes with class 'checkbox'
+    var checkedValues = [];
+
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            checkedValues.push(checkbox.value);
+        }
+    });
+    return checkedValues;
+}
+
+</script>
+        
+        <div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <audio src="" autoplay style="display: none;width: 0;height: 0;">
+            
+        </audio>
+    </body>
+</html>

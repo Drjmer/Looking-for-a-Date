@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Forgot Password</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="tinder.ico">
+    </head>
+    <body style="background-image: url('forgot1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    "><script>
+            window.onload=function(){
+                document.getElementById('container_forgot').style.display='block';
+                document.getElementById('preloader').style.display='none';
+            }
+        </script>
+       
+        <div id="preloader"></div>
+  
+    <script src="script.js"></script>
+    <div id="container_forgot">
+        <div class="container_forgot">
+            <div class="heading">
+                <h1>Forgot Password</h1>
+            </div>
+            <div class="user">
+            
+            <input type="text" name="username" id="username" placeholder="UserName"></div>
+            <button type="submit" onclick="forget1()" name="submit" id="submit">Submit</button>
+            <div id="secret_ques">
+                <p id="Incorrect_username"></p>
+                <p id="secret_q"></p>
+                <input id="ques_ans" type="text" style="display: none;"></input>
+                <button type="submit" id="ans_submit" onclick="password()" style="display: none;">Get Your Password</button>
+            </div>
+            <a href="login.html"><button type="submit" id="back">Back to Login</button></a>
+        </div>
+       <style>
+        #username{
+            width: 250px;
+            text-align: center;
+        }
+        #back{
+            bottom: 40px;
+            position: fixed;
+            left: 46.3%;
+        }
+        #preloader{
+          top: 0;
+          left: 0;
+          right:0;
+          bottom: 0;
+          width: 102%;
+        }
+       </style>
+        <div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+    </body>
+</html>

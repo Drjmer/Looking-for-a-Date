@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="tinder.ico"  rel="icon"> <!--used tinder favicon-->
+    <title>Login</title>
+</head>
+<body style="background-image: url('bp.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+">  
+ <script>
+    window.onload=function(){
+        document.getElementById('box1').style.display='block';
+        document.getElementById('preloader').style.display='none';
+    }
+</script>
+<audio src="login_perfect.mp3" autoplay controls style="display: none;"></audio>
+<div id="preloader"></div>
+<div id="box1">  
+<div class="box">
+        <div class="container">
+            <div class="top">
+                <span>Have an account?</span>
+                <header>Login Now</header>
+            </div>
+<div class="input-box">
+    <input type="text" class="input" id="username" placeholder="UserName" >
+    <i class="bx bx-user"></i><!-- use to add username icon-->
+</div>
+
+
+<div class="input-box">
+    <input type="password" class="input" id="password" placeholder="Password" >
+    <i class="bx bx-lock-alt"></i><!--use to add lock icon-->
+</div>
+<!-- captcha code -->
+
+<div class="captcha">
+    
+    <div class="preview"></div><br>
+    <div class="captcha-form">
+        <input type="text" id="captcha-form" placeholder="Enter Captcha text">
+        <button class="captcha-refresh">
+            <i class="fa fa-refresh"></i>
+        </button>
+    </div>
+    
+</div>
+
+
+
+<!--------------------------------------->
+
+
+<div class="input-box" >
+   <a id="student_login"> <button type="submit" class="submit" id="submit_login" value="Login" onclick="login()">Login</button></a>
+
+</div>
+
+
+
+<div id="Incorrect_login" style="display: none;color: red;"></div>
+    <div class="two">
+        <label for="forget"><a href="forgot.html" >Forgot Password?</a></label>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+</div>
+<style>
+    .captcha{
+        margin-bottom: 10px;
+
+    }
+    .captcha .preview{
+        color: red;
+        background: rgba(255,255,255,0.6);
+        width: 100%;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        letter-spacing:8px ;
+        border: 1px dashed #888;
+        font-family: "monospace";
+    }
+    .captcha .captcha-form{
+        display: flex;
+        
+    }
+    .captcha-form input{
+        width: 100%;
+        padding: 8px;
+        border: none;
+        background: rgba(255,255,255,0.6);
+        
+ }
+    .captcha-form .captcha-refresh{
+        width: 40px;
+        border: none;
+        outline: none;
+        background: #888;
+        color: #eee;
+        cursor: pointer;
+    }
+   
+</style>
+<div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<script src="script.js"></script>
+</body>
+</html>

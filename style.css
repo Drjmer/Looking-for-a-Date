@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap'); /*used for importing fonts from google*/
+*{
+    font-family: 'poppins' ,sans-serif;
+}
+
+.box{
+    display: flex;
+justify-content: center;
+align-items: center;
+min-height: 90vh; /*to get certain margin from top */
+}
+.container{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+}
+.top span{
+    color: #fff;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+header{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+.input-box .input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: black;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255, 255,255,0.5);
+}
+
+/* used for the icons near username and password */
+.input-box i{
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: black;
+}
+.submit{
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    color: #000;
+    background: rgba(255, 255,255,0.7);
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.two{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+label a{
+    text-decoration: none;
+    color: #fff;
+}
+.heading{
+   
+   text-align: justify;
+
+
+
+
+}
+#back_swipe{
+    margin-right: 1350px;
+   
+    margin-top: 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 10%;
+    color: white;
+    background: rgb(255,150,0);
+background: linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%);
+    position: relative;
+    cursor: pointer;
+
+ text-decoration: none;
+ 
+
+    
+}
+.container_forgot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.user input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: black;
+    font-size: 15px;
+    padding: 0 0 0 20px;
+    background: rgba(255, 255,255,0.5);
+}
+#submit{
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100px;
+    color: #000;
+    background: rgba(255, 255,255,0.7);
+    cursor: pointer;
+    margin-top: 10px;
+    
+
+}
+#back{
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 150px;
+    color: #000;
+    background: green;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#secret_ques{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: large;
+}
+
+#secret_ques input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: black;
+    font-size: 15px;
+    padding: 0 0 0 20px;
+    background: rgba(255, 255,255,0.5);    
+}
+#ans_submit{
+    margin-top: 20px;
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: black;
+    font-size: 15px;
+    padding: 0 0 0 20px;
+    background: rgba(255, 255,255,0.5);  
+}
+#final_ans{
+    color: green;
+}
+#final_ans1{
+    color: red;
+}
+#Incorrect_username{
+    color: red;
+}
+#Incorrect_login{
+    color: red;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hind&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap'); /*used for importing fonts from google*/
+*{
+    font-family: 'poppins' ,sans-serif;
+}
+.dating3{
+    background-image: url('dating3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container3{
+    width: 450px;
+    height: 500px;
+    background-color: rgba(0,0,0,0.8);
+    border-radius:10px;
+    position: relative;
+    margin: 8% auto;
+    margin-top: 3%;
+    
+    overflow: hidden;
+}
+.container3 p{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -10%;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+.container3 form{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transition: 0.75s;
+    
+}
+form input{
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px 0px;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+}
+#form1 input{
+    margin-top: -2px;
+}
+.btn-box{
+    
+    width: 100%;
+    margin :30px auto;
+    text-align: center;
+}
+form button{
+width: 100px;
+height:35px ;
+border-radius: 50px;
+color: white;
+font-size: 15px;
+cursor: pointer;
+background: rgb(255,150,0);
+background: linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%);
+outline: none;
+border: none;
+}
+#preloader
+{
+    background: black url('newg.gif') no-repeat center center;
+    height: 110%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    margin-top: -1%;
+    margin-left: -0.5%;
+
+}
+.gender{
+    color: white;
+    margin-left: -7%;
+}
+
+.gender input{
+    width:10%;
+    margin-left: -10px;
+    height: 12px;
+}
+
+
+#form2{
+    width: 320px;
+    left: 550px;
+}
+#form3{
+    width: 320px;
+    left: 550px;
+}
+
+#partner{
+    width: 80%;
+}
+.step-row{
+    width: 450px;
+    height: 50px;
+    margin-top: 0;
+    margin-left: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: black;
+    transition: 5s;
+}
+.step-col
+{
+     width: 150px;
+     font-size: 25px;
+     text-align: center;
+     position: relative;
+     color: white;
+
+}
+#progress{
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    background: rgb(255,150,0);
+    background: linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%);
+    transition: 0.75s;
+}
+.interest{
+    color:white;
+    margin-left: -7%;
+    overflow:auto;
+    height: 125px;
+    margin-top: 5%;
+}
+.interest input{
+    width:10%;
+    margin-left: -10px;
+    height: 12px;
+    
+}
+
+.interest::-webkit-scrollbar{background-color:black;}
+.interest::-webkit-scrollbar-thumb{background:linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%);
+height: 20px;}
+.interest::-webkit-scrollbar-track{
+    background-color: white;
+}
+.hobbies{
+    color:white;
+    margin-left: -7%;
+    overflow:auto;
+    height: 150px;
+    margin-top: 5%;
+}
+.hobbies input{
+    width:10%;
+    margin-left: -10px;
+    height: 12px;
+    }
+
+.hobbies::-webkit-scrollbar{background-color:black;}
+.hobbies::-webkit-scrollbar-thumb{background:linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%);
+height: 20px;}
+.hobbies::-webkit-scrollbar-track{
+    background-color: white;
+}
+#Logout{
+    margin-left: 2.5%;
+    margin-top: 1%;
+    background:linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%); ;
+    width: 100px;
+    height: 35px;
+    border-radius: 17.5px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#swipe{
+    margin-left: 2.5%;
+    margin-top: 0%;
+    background:linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%) ;
+    width: 200px;
+    height: 35px;
+    border-radius: 17.5px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+section{
+    margin-right: -100px;
+}
+
+section .card .image{
+    height: 200px ;
+    width: 200px;
+    border-radius: 50%;
+    padding: 3px;
+   
+   
+}
+section .card .image img{
+    height: 200px ;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+  
+    margin-top: 10%;
+}
+#swipe-body{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    width: 95%;
+}
+.card{
+    border-radius:20px;
+    background-color:  rgba(0,0,0,0.8);
+    color: white;
+    margin: 20px;
+    position: relative;
+    height: 650px;
+}
+.card .card-content .image{
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+position: relative;
+margin-left: 25%;
+}
+.card::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%);
+    border-radius: 20px 20px 0 0;
+}
+.bio-data{
+   
+    padding: 10px;
+    height:330px;
+    margin-left: 50px;
+}
+.date-me i{
+    margin-right: 10px;
+}
+.date-me{
+    margin-left: 38%;
+    height: 50px;
+    margin-top: 15px
+}
+.like{
+    width: 50%;
+    height: 75%;
+    background: linear-gradient(90deg, rgba(255,150,0,1) 46%, rgba(243,95,8,1) 66%, rgba(236,51,13,1) 93%);;
+    border-radius: 20px;
+    border-color: #FFF;
+    border-style: none;
+    color:white;
+    cursor: pointer;
+}
+
+.mywish{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.content{
+    width:500px;
+    height:700px;     
+}
+.mywish_odd{
+    width: 50%;
+    margin-left: 25%;
+}
+#preloader1
+{
+    background: black url('newg.gif') no-repeat center center;
+    height: 110%;
+    width: 110%;
+    position: fixed;
+    z-index: 100;
+    margin-top: 500px;
+}
+#swipe-body{
+    background-image: url('dating9.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#mat{
+    
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
+        
+}

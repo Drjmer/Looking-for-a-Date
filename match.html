@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Match</title>
+        <link rel="icon" href="tinder.ico">
+        <link rel="stylesheet" href="style.css">
+        <!-- this is ued to add emailjs api -->
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "wQXX4l8IiksFykMEF",
+      });
+   })();
+</script>
+    </head>
+    <body style="background-image: url('matching12.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;" id="sad">
+        <audio src="matching.mp3" autoplay controls style="display: none;"></audio>
+        <style>
+           #img1,#img2{
+        height: 200px ;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        margin-top: 10%;
+        margin-left: -30%;
+                
+    
+           } 
+           #img1{
+            margin-left: -30%;
+           }
+           #img2{
+            margin-left: -10%;
+           }
+           #match_img{
+           display: flex;
+           padding: 55px;
+           margin-top: -15%;
+            
+           }
+           #soory_img{
+            background-image: url('soory_img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+           }
+
+           
+           h1{
+            margin-top: 15px;
+           }
+           .mywish{
+            width: 550px;
+            margin-top: 5px;
+            left: 100px;
+           }
+           #mat{
+            height: 100vh;
+           
+           
+           }
+           .card::before{
+         
+background: #F7BEED;
+background: linear-gradient(135deg, #F7BEED, #E20B9B);
+}
+#soory_img{
+    width: 80%;
+    height: 100vh;
+}
+         #hsorry{
+            color: white;
+         }  
+           
+          .card{
+            right: 400px;
+            top: 2px;
+           overflow: hidden;
+           height: 700px;
+           width: 500px;
+          }
+        </style>
+         <script>
+            window.onload=function(){
+                document.getElementById('nw').style.display='block';
+                document.getElementById('preloader').style.display='none';
+                
+            }
+        </script>
+        <style>
+
+
+            #b{
+                width: 100px;
+                background: #F7BEED;
+background: linear-gradient(135deg, #F7BEED, #E20B9B);
+    height: 35px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    color: white;
+    margin-left: 25px;
+            }
+            #msg{
+                width: 100px;
+                background: #F7BEED;
+background: linear-gradient(135deg, #F7BEED, #E20B9B);
+    height: 35px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    color: white;
+            }
+            #contact{
+                width: 100px;
+                background: #F7BEED;
+background: linear-gradient(135deg, #F7BEED, #E20B9B);
+    height: 35px;
+    border-radius: 50px ;
+    outline: none;
+    border: none;
+    color: white;
+            }
+            #again{
+                margin-left: 1325px;
+                margin-top: 20px;
+                height: 45px;
+                width: 10%;
+                border: none;
+                border-radius: 30px;
+                color: black;
+                font-size: 15px;
+                cursor: pointer;
+                background: rgba(255, 255,255,0.5);
+            
+            }
+            #yeah{
+                margin-top: -46px;
+            }
+            .bio-data1{
+                position: absolute;
+    margin-top: -30px;
+    margin-left: 350px;
+    width: 320px;
+    transition: 0.75s;
+            }
+            .card-content .bio-data{
+                width: 300px;
+                height: 300px;
+            position: relative;
+            top: 100%;
+            left: 10%;
+            transition: 0.75s;
+            }
+            .bio-data{
+   
+   padding: 10px;
+   height:330px;
+  
+}
+            #email {
+                top: 15%;
+    left: 20%;
+}
+        #new_name1{
+            width: 100%;
+  
+    padding-top: 10px;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+
+        }
+        button{
+            cursor: pointer;
+        }
+        </style>
+
+        <div id="preloader"></div>
+        <a href="dating.html"><button id="again">Try Again</button></a>
+       <div id="nw"><div id="mat"></div></div>
+        
+        <script>
+            
+            let roll_no=localStorage.getItem('roll_no')
+            let name=localStorage.getItem('name')
+            let image=localStorage.getItem('image')
+            let email=localStorage.getItem('Email')
+            let age=localStorage.getItem('age')
+            let year=localStorage.getItem('year_study')
+            let gender=localStorage.getItem('Gender')
+            let interest=localStorage.getItem('Interest')
+            let hobbies=localStorage.getItem('Hobbies')
+            let sorry=localStorage.getItem('sorry')
+            let ling=localStorage.getItem('ling')
+            let og_photo=localStorage.getItem('og_photo')
+            let new_name=localStorage.getItem('new_name')
+            let new_rollno=localStorage.getItem('new_rollno')
+            console.log(new_name)
+            console.log(ling)
+            
+            if(sorry==='sorry'){//this checks if there is no match 
+                out=`<h1 id="hsorry"> Sorry, we can't find a match for you</h1>`
+                document.getElementById("sad").style.backgroundImage="url('sad.png')"
+                console.log(sorry)
+            }
+            else if(ling!=gender){
+                console.log(new_name)
+            out=`
+            <h1 style="color:white;" id="yeah">Yeah, it's a match!!</h1>
+            <div class="mywish">
+                    <div class="content">
+                    <div class="card">
+                    <div class="card-content">
+                    <div class="image">
+                    <img id="img1" src=${og_photo} alt="std">
+                    <img id="img2" src=${image} alt="student">
+                    </div><br>
+                    <div class="bio-data" id="bio1">
+                    <p class="Name">Name: ${name}</p>
+                    <p class="IITB_Roll_Number">IITB Roll Number: ${roll_no}</p>
+                    <p class="Age">Age: ${age}</p>
+                    <p class="Gender">Gender: ${gender}</p>
+                    <p class="Interests">Interests: ${interest}</p>
+                    <p class="Hobbies">Hobbies: ${hobbies}</p>
+                    <p class="Email">Email: ${email}</p>
+                    <div class="btn-box" style="margin-top:px">
+                    <button  id="contact" type="button" onclick="swipe()">Contact</button>
+                    
+                    </div>
+
+                    <div class="bio-data1" id="email">
+                    <span>Name: &nbsp;</span>
+                    <input type="text" id="new_name1" style="width:60%" value="${new_name}""></input><br><br>
+                    <span>Message: </span><br>
+                    <textarea style="width:80%;height:150px;background:#fff0f5;" id="message1"></textarea>
+                    <br><br>
+                    <button type="button" id="b" onclick="back_sw()" >Back</button>&nbsp;&nbsp;&nbsp;
+                    <button type="button" id="msg" onclick="msg()">Send</button>
+                    </div>
+                    </div>
+
+                    
+                    
+                   </div>
+                   </div>
+                   </div>
+                  </div>`
+                   
+                }
+            else if(gender===ling)
+            {
+                out=`<h1 style="color:white;" id="yeah">Yeah, it's a match!!</h1>
+            <div class="mywish">
+                    <div class="content">
+                    <div class="card">
+                    <div class="card-content">
+                    <div class="image">
+                    <img id="img1" src=${og_photo} alt="std">
+                    <img id="img2" src=${image} alt="student">
+                    </div><br>
+                    <div class="bio-data" id="bio1">
+                    <p class="Name">Name: ${name}</p>
+                    <p class="IITB_Roll_Number">IITB Roll Number: ${roll_no}</p>
+                    <p class="Age">Age: ${age}</p>
+                    <p class="Gender">Gender: ${gender}</p>
+                    <p class="Interests">Interests: ${interest}</p>
+                    <p class="Hobbies">Hobbies: ${hobbies}</p>
+                    <p class="Email">Email: ${email}</p>
+                    <div class="btn-box" style="margin-top:px">
+                    <button  id="contact" type="button" onclick="swipe()">Contact</button>
+                    
+                    </div>
+
+                    <div class="bio-data1" id="email">
+                    <span>Name: &nbsp;</span>
+                    <input type="text" value="${new_name}" id="new_name1" style="width:60%"></input><br><br>
+                    <span>Message: </span><br>
+                    <textarea style="width:80%;height:150px;background:#fff0f5;" id="message1"></textarea>
+                    <br><br>
+                    <button type="button" id="b" onclick="back_sw()" >Back</button>&nbsp;&nbsp;&nbsp;
+                    <button type="button" id="msg" onclick="msg()" >Send</button>
+                    </div>
+                    </div>
+
+                    
+                    
+                   </div>
+                   </div>
+                   </div>
+                  </div>` 
+                   console.log("chaljapls")
+            }
+            
+            document.getElementById('mat').innerHTML=out
+            function msg(){
+
+               //this function is used to send email to the matched ones 
+                (function(){
+                    console.log("hello")
+                    emailjs.init("wQXX4l8IiksFykMEF");
+                })();
+                //this variable assigns variables there values (variable defined in the tempelate of emailjs)
+                var params={
+                    sendername: new_name,
+                    to : email,
+                    subject: "Dating App",
+                    message: document.getElementById("message1").value,
+                    reply_to : "csprojectkavya@gmail.com"
+                };
+                var serviceID="service_49nzp65";
+                var tempelateID="template_0e663dg";
+                emailjs.send(serviceID,tempelateID,params)
+                .then( res=> {
+                    alert("Email Sent Successfully")
+                })
+                
+            }
+                
+                
+                
+            function swipe(){
+                let bio=document.getElementById("contact")
+                bio.style.left="-389px"
+                let bio1=document.getElementById("bio1")
+                bio1.style.left="-335px"
+            }
+            function back_sw(){
+                let bio=document.getElementById("contact")
+                bio.style.left="389px"
+                let bio1=document.getElementById("bio1")
+                bio1.style.left="50px"
+            }
+
+        </script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        
+        <div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="faltu" style="display: none;width: 0;height: 0;"><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe width="914" height="514" src="https://www.youtube.com/embed/0tOXxuLcaog" title="CHIPI CHIPI CHAPA CHAPA CAT 10 HOURS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</html>
